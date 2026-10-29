@@ -1,0 +1,454 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+:root {
+    --fundo: #f4f2f8;
+    --roxo-escuro: #201438;
+    --roxo: #6336a5;
+    --rosa: #f05a8a;
+    --ciano: #45d6d0;
+    --texto: #2d2937;
+    --texto-suave: #6c6678;
+    --branco: #ffffff;
+    --borda: #e5dfed;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 135px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.65;
+    padding-top: 124px;
+}
+
+/* =========================
+   CABEÇALHO FIXO
+========================= */
+.cabecalho {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 118px;
+    padding: 17px 20px 19px;
+    text-align: center;
+    color: var(--branco);
+    background: var(--roxo-escuro);
+    box-shadow: 0 5px 20px rgba(32, 20, 56, 0.2);
+}
+
+.cabecalho::before,
+.rodape::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        to right,
+        var(--rosa) 0 25%,
+        var(--ciano) 25% 50%,
+        #f6c453 50% 75%,
+        var(--roxo) 75% 100%
+    );
+}
+
+.cabecalho::before {
+    top: 0;
+}
+
+.sobretitulo {
+    color: var(--ciano);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+}
+
+.cabecalho h1 {
+    margin: 2px 0;
+    font-size: clamp(1.55rem, 3vw, 2.1rem);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+.subtitulo {
+    color: #ddd5ee;
+    font-size: 0.92rem;
+}
+
+/* =========================
+   LAYOUT E MENU STICKY
+========================= */
+.container-principal {
+    display: flex;
+    align-items: flex-start;
+    gap: 26px;
+    width: min(1240px, 100%);
+    margin: 0 auto;
+    padding: 28px 24px 44px;
+}
+
+.menu-lateral {
+    position: sticky;
+    top: 145px;
+    flex: 0 0 210px;
+    padding: 20px 17px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(32, 20, 56, 0.05);
+}
+
+.menu-lateral h2 {
+    margin-bottom: 13px;
+    color: var(--roxo);
+    font-size: 1rem;
+}
+
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral li + li {
+    margin-top: 8px;
+}
+
+.menu-lateral a {
+    display: block;
+    padding: 8px 10px;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.92rem;
+    border-radius: 7px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a:focus {
+    color: var(--roxo);
+    background: #f0eafa;
+}
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+/* =========================
+   DESTAQUE PRINCIPAL
+========================= */
+.destaque {
+    margin-bottom: 34px;
+    padding: clamp(22px, 4vw, 36px);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(32, 20, 56, 0.05);
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 5px 9px;
+    color: #4d287e;
+    background: #f0eafa;
+    border-radius: 5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.destaque h2 {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    color: var(--roxo-escuro);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.3;
+    text-align: center;
+}
+
+.destaque p {
+    margin-bottom: 18px;
+    line-height: 1.85;
+}
+
+.destaque blockquote {
+    padding: 13px 17px;
+    color: #4c4559;
+    background: #faf8fd;
+    border-left: 4px solid var(--rosa);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+.destaque cite {
+    display: block;
+    margin-top: 7px;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+
+/* =========================
+   CARDS MUSICAIS
+========================= */
+.secao-cards {
+    margin-bottom: 34px;
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.linha-decorativa {
+    align-self: stretch;
+    width: 5px;
+    min-height: 48px;
+    background: linear-gradient(
+        to bottom,
+        var(--rosa) 0 25%,
+        var(--ciano) 25% 50%,
+        #f6c453 50% 75%,
+        var(--roxo) 75% 100%
+    );
+    border-radius: 5px;
+}
+
+.sobretitulo-secao {
+    color: var(--roxo);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.titulo-secao h2 {
+    color: var(--roxo-escuro);
+    font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+    line-height: 1.3;
+}
+
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(32, 20, 56, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 24px rgba(32, 20, 56, 0.12);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #ebe5f2;
+}
+
+.card-conteudo {
+    padding: 18px;
+}
+
+.numero-card {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #b83769;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.card h3 {
+    margin-bottom: 9px;
+    color: var(--roxo-escuro);
+    font-size: 1.12rem;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+}
+
+.card p {
+    color: #5e586b;
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+/* =========================
+   DESAFIO DA SEMANA
+========================= */
+.dica {
+    padding: 24px;
+    background: #f0eafa;
+    border: 1px solid #dfd2f2;
+    border-radius: 12px;
+}
+
+.dica h2 {
+    margin-bottom: 7px;
+    color: var(--roxo-escuro);
+    font-size: 1.25rem;
+}
+
+.dica p {
+    color: #514763;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+.rodape {
+    position: relative;
+    padding: 27px 18px 23px;
+    color: #e9e2f4;
+    background: var(--roxo-escuro);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.rodape::after {
+    bottom: 0;
+}
+
+.rodape strong {
+    color: var(--branco);
+}
+
+.rodape p + p {
+    margin-top: 4px;
+    color: #c8bddb;
+    font-size: 0.82rem;
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media (max-width: 900px) {
+    .container-principal {
+        gap: 18px;
+        padding: 22px 18px 34px;
+    }
+
+    .menu-lateral {
+        flex-basis: 180px;
+        padding: 16px 12px;
+    }
+
+    .card img {
+        height: 165px;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+@media (max-width: 680px) {
+    body {
+        padding-top: 116px;
+    }
+
+    .cabecalho {
+        min-height: 110px;
+        padding: 16px 12px;
+    }
+
+    .container-principal {
+        display: block;
+        padding: 18px 14px 28px;
+    }
+
+    .menu-lateral {
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .menu-lateral ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .menu-lateral li + li {
+        margin-top: 0;
+    }
+
+    .menu-lateral a {
+        padding: 7px 9px;
+        background: #f7f4fb;
+        font-size: 0.85rem;
+    }
+
+    .destaque {
+        margin-bottom: 26px;
+        padding: 22px 18px;
+    }
+
+    .container-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .card img {
+        height: 135px;
+    }
+
+    .card-conteudo {
+        padding: 13px;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.88rem;
+    }
+
+    .dica {
+        padding: 19px;
+    }
+}
+
+/* Celulares estreitos */
+@media (max-width: 390px) {
+    .container-principal {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .container-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 190px;
+    }
+
+    .card-conteudo {
+        padding: 16px;
+    }
+}
